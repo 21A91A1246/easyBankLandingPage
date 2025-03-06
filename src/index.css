@@ -1,13 +1,454 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100..900&family=Epilogue:wght@100..900&family=Inter:wght@100..900&family=Overpass:wght@100..900&family=Poppins:wght@100..900&family=Public+Sans:wght@100..900&family=Space+Mono:wght@400;700&display=swap');
+
+/* Global Reset */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Barlow, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Header Bar */
+.HeaderBar {
+  margin-left: 50px;
+  display: flex;
+  padding: 30px 0;
+  z-index: 10;
+  position: relative;
+  background: white;
 }
+
+.mobileView{
+  display: none;
+}
+.logo {
+  flex: 2;
+}
+
+.centerDiv {
+  flex: 4;
+}
+
+.rightDiv {
+  flex: 2;
+}
+
+.rightDiv button {
+  border: none;
+  background-color: hsl(136, 65%, 51%);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.centerDiv ul li {
+  list-style: none;
+  display: inline-flex;
+  padding: 0 20px;
+  color: gray;
+}
+
+.centerDiv ul li:hover {
+  color: black;
+  cursor: pointer;
+  border-bottom: 3px solid green;
+}
+
+/* Body Top */
+.bodyTop {
+  padding-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.bodyTop .bodyRight {
+  background: url("./components/bg-intro-desktop.svg") no-repeat center center/cover;
+  position: relative;
+  width: 60%;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.bodyTop .bodyRight img {
+  position: relative;
+  max-width: 100%;
+  height: 27rem;
+  top: 0;
+  z-index: 1;
+}
+
+.bodyLeft {
+  width: 40%;
+  line-height: 1.5;
+  font-size: small;
+  color: gray;
+  font-weight: 400;
+}
+
+.bodyLeft h2 {
+  font-weight: 500;
+}
+
+.bodyLeft .rightDiv {
+  display: none;
+}
+
+/* Body Center */
+.bodyCenter {
+  background-color: hsl(220, 16%, 96%);
+  padding: 20px 70px 0 50px;
+}
+
+.bodyCenter .contentDiv {
+  width: 50%;
+}
+
+.bodyCenter p {
+  color: gray;
+  line-height: 1.5;
+  font-size: 10px;
+  padding-top: 10px;
+}
+
+/* Four Boxes */
+.fourBoxes {
+  display: flex;
+  gap: 15px;
+  padding: 40px 0;
+}
+
+.Boxes img {
+  height: 45px;
+  padding-bottom: 10px;
+}
+
+/* Body Bottom */
+.bodyBottom {
+  padding: 30px 0 0 50px;
+}
+
+.bodyBottom .fourBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.bodyBottom .fourBoxes .Boxes {
+  flex: 0 0 20%;
+}
+
+.bodyBottom .Boxes img {
+  height: 200px;
+  width: auto;
+  padding-bottom: 10px;
+}
+
+.bodyBottom h3 {
+  font-weight: 500;
+  font-size: larger;
+}
+
+.name {
+  font-size: 12px;
+  color: gray;
+  padding: 15px 0;
+}
+
+.bodyBottom .fourBoxes .Boxes p,
+.bodyBottom .fourBoxes .Boxes h4 {
+  font-size: 10px;
+  color: gray;
+  padding: 15px 0;
+}
+
+.bodyBottom .fourBoxes .Boxes h4 {
+  font-size: 15px;
+  font-weight: 450;
+  color: black;
+}
+
+.bodyBottom .fourBoxes .Boxes h4:hover {
+  cursor: pointer;
+  color: hsl(136, 65%, 51%);
+}
+
+/* Footer */
+.footerDiv {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 50px;
+  background-color: hsl(233, 26%, 24%);
+}
+
+.socialmedia {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 300;
+}
+
+.footerDiv a {
+  text-decoration: none;
+  color: white;
+}
+
+.footerDiv a:hover {
+  color: hsl(136, 65%, 51%);
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+  padding-top: 25px;
+}
+
+#specialIcon:hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+.footerDiv p {
+  color: white;
+  font-size: 10px;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.invite {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.invite button {
+  color: white;
+  cursor: pointer;
+  background-color: hsl(136, 65%, 51%);
+  border-radius: 50px;
+  padding: 10px;
+}
+
+                                           /* Responsive Design */
+@media screen and (max-width: 468px) {
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      /* .mobileView{
+        display: block;
+        height: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+        z-index: 1;
+      }
+      .centerDiv{
+        display: none;
+        background-color: aqua;
+        border-radius: 10px;
+      }
+      .centerDiv-show{
+        display: block;
+      }
+      .centerDiv ul li{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0px;
+        text-align: center;
+      } */
+      .mobileView {
+        display: block;
+        height: 20px;
+        padding-right: 15px;
+        cursor: pointer;
+        z-index: 10;
+        position: relative;
+      }
+      
+      .centerDiv {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s;
+      }
+      
+      .centerDiv ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      
+      .centerDiv ul li {
+        margin: 15px 0;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      
+      .centerDiv-show {
+        opacity: 1;
+        visibility: visible;
+      }
+      .centerDiv ul li:hover{
+        border-bottom: none;
+      }
+
+      .rightDiv{
+        display: none;
+      }
+      .bodyLeft .rightDiv{
+        display: block;
+        padding-top: 20px;
+      }
+
+      .bodyTop {
+        z-index: 1;
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .bodyLeft{
+        /* margin-left: 30px; */
+        z-index: 11;
+        padding-left: 0px;
+        padding-bottom: 25px;
+        height: 100%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .bodyLeft h2{
+        text-align: center;
+      }
+
+      .bodyTop .bodyRight {
+        background: url("./components/bg-intro-desktop.svg") no-repeat center center/cover;
+        position: relative;
+        width: 100%;
+        height: 25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 0; /* Send it behind the header */
+      
+      }
+      .bodyTop .bodyRight img {
+        position: relative;
+        max-width: 100%;
+        height: 23rem;
+        top: 0;
+        z-index: 1;
+      }
+
+      /* .bodyCenter{
+        display: flex;
+        flex-direction: column;
+      } */
+       
+      .bodyCenter{
+        display: flex;
+        flex-direction: column;
+        background-color: hsl(220, 16%, 96%);
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .fourBoxes{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 40px 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .bodyBottom .fourBoxes .Boxes{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 10%;
+        text-align: center;
+        padding: 0px;
+      }
+      .bodyBottom .fourBoxes .Boxes p {
+        padding: 5px 0px;
+        text-align: left;
+        width: 70%;
+      }
+      
+      .bodyBottom .fourBoxes .Boxes h4 {
+        padding: 5px 0px;
+        text-align: left;
+        width: 70%;
+      }
+
+      .bodyCenter .contentDiv{
+        width: 100%;
+      }
+
+      .bodyBottom{
+        text-align: left;
+        padding: 0px 15px 0px 15px;
+      }
+      
+      .bodyBottom h3{
+        text-align: center;
+        padding-top: 20px;
+        font-weight: 500;
+        font-size: 25px;
+      }
+
+      .footerDiv{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 2; 
+        background-color: hsl(233, 26%, 24%);
+      }
+
+      .socialmedia, .logoDiv{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0px;
+      }
+}
+
